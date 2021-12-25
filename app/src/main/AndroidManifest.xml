@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KateStudy">
         <activity
-            android:name=".presentation.MainActivity"
+            android:name="team.mediasoft.katestudy.main.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
