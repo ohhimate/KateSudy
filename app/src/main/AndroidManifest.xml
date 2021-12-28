@@ -10,8 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KateStudy">
         <activity
-            android:name="team.mediasoft.katestudy.main.presentation.MainActivity"
-            android:exported="true">
+            android:name=".main.presentation.CityWeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.presentation.GeneralWeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.presentation.MainActivity"
+            android:exported="true"
+            android:persistableMode="persistNever">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
