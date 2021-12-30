@@ -10,18 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KateStudy">
         <activity
-            android:name=".main.presentation.CityWeatherActivity"
+            android:name=".splash.presentation.CityWeatherActivity"
             android:exported="false" />
         <activity
-            android:name=".main.presentation.GeneralWeatherActivity"
+            android:name=".splash.presentation.GeneralWeatherActivity"
             android:exported="false" />
         <activity
             android:name=".main.presentation.MainActivity"
-            android:exported="true"
-            android:persistableMode="persistNever">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

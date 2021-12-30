@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteY="0dp">
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/splash_screen_progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="340dp"
         android:layout_height="14dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnGenW"
+        android:id="@+id/splash_screen_btn_to_gen_w"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
@@ -32,16 +32,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCityW"
+        android:id="@+id/splash_screen_btn_to_city_w"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/btn_city_weather"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnGenW"
+        app:layout_constraintEnd_toEndOf="@+id/splash_screen_btn_to_gen_w"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/btnGenW"
-        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/splash_screen_btn_to_gen_w"
+        app:layout_constraintTop_toTopOf="@+id/splash_screen_progress_bar"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
