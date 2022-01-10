@@ -10,11 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KateStudy">
         <activity
-            android:name="team.mediasoft.katestudy.main.presentation.MainActivity"
+            android:name=".splash.presentation.CityWeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".splash.presentation.GeneralWeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">KateStudy</string>
+
+    <string name="btn_general_weather">General weather</string>
+    <string name="btn_city_weather">City weather</string>
+
+    <string name="title_gen">There will be general weather</string>
+    <string name="title_city">There will be city weather</string>
 </resources>
