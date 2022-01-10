@@ -1,4 +1,4 @@
-package team.mediasoft.katestudy.baseapp.presentation
+package team.mediasoft.katestudy.baseapp.presentation.activity
 
 import android.os.Bundle
 import android.util.Log

@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KateStudy">
         <activity
-            android:name=".splash.presentation.CityWeatherActivity"
+            android:name=".city_weather.presentation.activity.CityWeatherActivity"
             android:exported="false" />
         <activity
-            android:name=".splash.presentation.GeneralWeatherActivity"
+            android:name=".general_city_weather.presentation.activity.GeneralWeatherActivity"
             android:exported="false" />
         <activity
-            android:name=".main.presentation.MainActivity"
+            android:name=".splash.presentation.activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
