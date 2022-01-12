@@ -10,6 +10,7 @@ class TimerServiceImpl : TimerService {
                 Thread.sleep(40)
                 subscriber.onNext(i)
             }
+            subscriber.onComplete()
         }
     }
 }

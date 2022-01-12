@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
-const val LIFECYCLE = "Lifecycle"
+const val TEST_TAG = "TEST_TAG"
 
 abstract class BaseActivity : AppCompatActivity() {
 
@@ -13,31 +13,31 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
-        Log.d(LIFECYCLE, this.javaClass.simpleName + ".onCreate")
+        Log.d(TEST_TAG, this.javaClass.simpleName + ".onCreate")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d(LIFECYCLE, this.javaClass.simpleName + ".onStart")
+        Log.d(TEST_TAG, this.javaClass.simpleName + ".onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d(LIFECYCLE, this.javaClass.simpleName + ".onResume")
+        Log.d(TEST_TAG, this.javaClass.simpleName + ".onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(LIFECYCLE, this.javaClass.simpleName + ".onPause")
+        Log.d(TEST_TAG, this.javaClass.simpleName + ".onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(LIFECYCLE, this.javaClass.simpleName + ".onStop")
+        Log.d(TEST_TAG, this.javaClass.simpleName + ".onStop")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(LIFECYCLE, this.javaClass.simpleName + ".onDestroy")
+        Log.d(TEST_TAG, this.javaClass.simpleName + ".onDestroy")
     }
 }
