@@ -1,3 +1,10 @@
 package team.mediasoft.katestudy.main.presentation.activity
 
-class MainActivity
+import team.mediasoft.katestudy.baseapp.presentation.activity.BaseActivity
+
+class MainActivity: BaseActivity() {
+
+    override fun getLayoutId(): Int {
+        TODO("Not yet implemented")
+    }
+}
