@@ -6,10 +6,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import team.mediasoft.katestudy.baseapp.presentation.activity.TEST_TAG
 import team.mediasoft.katestudy.splash.presentation.repository.TimerRepository
+import javax.inject.Inject
 
-class TimerViewModel : ViewModel() {
-
-    private val repository = TimerRepository()
+class TimerViewModel @Inject constructor(private val repository: TimerRepository) : ViewModel() {
 
     private val _timer = MutableLiveData<Int>()
     val timer: LiveData<Int> = _timer
@@ -19,10 +18,9 @@ class TimerViewModel : ViewModel() {
 
     init {
         _isCompleted.value = false
-        subscribeToTimer()
     }
 
-    private fun subscribeToTimer() {
+    fun subscribeToTimer() {
         repository.getTimer().subscribe({
             Log.d(TEST_TAG, "Next int: $it")
             _timer.value = it

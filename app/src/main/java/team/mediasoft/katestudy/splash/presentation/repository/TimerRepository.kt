@@ -5,9 +5,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import team.mediasoft.katestudy.splash.data.service.TimerServiceImpl
 
-class TimerRepository {
-
-    private val timerServiceImpl = TimerServiceImpl()
+class TimerRepository(private val timerServiceImpl: TimerServiceImpl) {
 
     fun getTimer(): Observable<Int> {
         return timerServiceImpl.getTimer()
