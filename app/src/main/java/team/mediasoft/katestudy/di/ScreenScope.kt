@@ -1,4 +1,4 @@
-package team.mediasoft.katestudy.splash.presentation.di
+package team.mediasoft.katestudy.di
 
 import javax.inject.Scope
 

@@ -2,12 +2,13 @@ package team.mediasoft.katestudy.splash.presentation.di
 
 import androidx.lifecycle.ViewModel
 import dagger.Binds
-import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
 import dagger.multibindings.IntoMap
+import team.mediasoft.katestudy.di.ScreenScope
+import team.mediasoft.katestudy.splash.data.service.TimerService
+import team.mediasoft.katestudy.splash.data.service.TimerServiceImpl
 import team.mediasoft.katestudy.splash.presentation.presenter.TimerViewModel
-import team.mediasoft.katestudy.splash.presentation.repository.TimerRepository
 import team.mediasoft.katestudy.utils.ViewModelFactory
 
 @Component(modules = [SplashScreenModule::class])
@@ -15,22 +16,17 @@ import team.mediasoft.katestudy.utils.ViewModelFactory
 interface SplashScreenComponent {
 
     fun viewModelFactory(): ViewModelFactory
-
-    @Component.Builder
-    interface Builder {
-
-        @BindsInstance
-        fun repository(timerRepository: TimerRepository): Builder
-
-        fun build(): SplashScreenComponent
-    }
 }
 
 @Module
-abstract class SplashScreenModule {
+interface SplashScreenModule {
 
     @Binds
     @IntoMap
     @ViewModelKey(TimerViewModel::class)
-    abstract fun splashScreenViewModel(viewModel: TimerViewModel): ViewModel
+    fun bindSplashScreenViewModel(viewModel: TimerViewModel): ViewModel
+
+    @Binds
+    fun bindTimerService(timerServiceImpl : TimerServiceImpl): TimerService
+
 }
