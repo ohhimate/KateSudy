@@ -3,14 +3,13 @@ package team.mediasoft.katestudy.splash.presentation.repository
 import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
-import team.mediasoft.katestudy.splash.data.service.TimerServiceImpl
+import team.mediasoft.katestudy.splash.data.service.TimerService
+import javax.inject.Inject
 
-class TimerRepository {
-
-    private val timerServiceImpl = TimerServiceImpl()
+class TimerRepository @Inject constructor(private val timerService: TimerService) {
 
     fun getTimer(): Observable<Int> {
-        return timerServiceImpl.getTimer()
+        return timerService.getTimer()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
