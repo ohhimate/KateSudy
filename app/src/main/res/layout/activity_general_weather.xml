@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".general_city_weather.presentation.activity.GeneralWeatherActivity">
+    tools:context=".feature.general_city_weather.presentation.activity.GeneralWeatherActivity">
 
     <TextView
         android:id="@+id/splash_screen_tv_title_gen"

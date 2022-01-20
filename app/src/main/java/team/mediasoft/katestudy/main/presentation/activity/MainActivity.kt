@@ -4,7 +4,7 @@ import team.mediasoft.katestudy.baseapp.presentation.activity.BaseActivity
 
 class MainActivity: BaseActivity() {
 
-    override fun getLayoutId(): Int {
+    fun getLayoutId(): Int {
         TODO("Not yet implemented")
     }
 }

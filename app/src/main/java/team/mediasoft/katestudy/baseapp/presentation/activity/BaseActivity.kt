@@ -8,11 +8,8 @@ const val TEST_TAG = "TEST_TAG"
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    abstract fun getLayoutId(): Int
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayoutId())
         Log.d(TEST_TAG, this.javaClass.simpleName + ".onCreate")
     }
 
