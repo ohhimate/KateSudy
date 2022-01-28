@@ -5,5 +5,5 @@ import team.mediasoft.katestudy.baseapp.presentation.activity.BaseActivity
 
 class GeneralWeatherActivity : BaseActivity() {
 
-   fun getLayoutId(): Int = R.layout.activity_general_weather
+    fun getLayoutId(): Int = R.layout.activity_general_weather
 }

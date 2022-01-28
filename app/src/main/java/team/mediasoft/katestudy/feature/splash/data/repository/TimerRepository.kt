@@ -14,5 +14,6 @@ class TimerRepository
     fun getTimer(): Observable<Int> {
         return timerService.getTimer()
             .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
     }
 }
