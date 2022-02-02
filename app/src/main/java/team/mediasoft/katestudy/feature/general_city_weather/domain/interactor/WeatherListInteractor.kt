@@ -5,5 +5,5 @@ import team.mediasoft.katestudy.baseapp.weather.domain.model.CityWeather
 
 interface WeatherListInteractor {
 
-    fun getGeneralWeather(cityIds: List<Int>): List<Single<CityWeather>>
+    fun getGeneralWeather(cityIds: List<Int>): Map<Int,Single<CityWeather>>
 }

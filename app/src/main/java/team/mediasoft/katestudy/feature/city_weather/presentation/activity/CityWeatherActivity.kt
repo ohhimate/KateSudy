@@ -26,7 +26,6 @@ class CityWeatherActivity : BaseActivity() {
     private val cityWeatherViewModel by viewModels<CityWeatherScreenViewModel> { component.viewModelFactory() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         binding = ActivityCityWeatherBinding.inflate(layoutInflater)
         setContentView(binding.root)

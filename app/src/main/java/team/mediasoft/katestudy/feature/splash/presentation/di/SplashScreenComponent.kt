@@ -28,5 +28,4 @@ interface SplashScreenModule {
 
     @Binds
     fun bindTimerService(timerServiceImpl: TimerServiceImpl): TimerService
-
 }

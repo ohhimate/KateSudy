@@ -2,6 +2,7 @@ package team.mediasoft.katestudy.feature.splash.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import javax.inject.Inject
 import team.mediasoft.katestudy.baseapp.presentation.viewmodel.BaseViewModel
@@ -9,7 +10,18 @@ import team.mediasoft.katestudy.baseapp.utils.data.DefaultSingleSubscriber
 import team.mediasoft.katestudy.baseapp.utils.debugLog
 import team.mediasoft.katestudy.baseapp.weather.domain.interactor.WeatherInteractor
 import team.mediasoft.katestudy.baseapp.weather.domain.model.CityWeather
-
+/*
+fun <T> Single<T>.toLiveData(): MutableLiveData<T>{
+    val liveData = MutableLiveData<T>()
+    val subscriber = DefaultSingleSubscriber<T>(
+        onSuccess = {
+            debugLog("Data: $it")
+            liveData.value = it
+        }
+    )
+    return liveData
+}
+*/
 class CityWeatherScreenViewModel
 @Inject constructor(
     private val weatherInteractor: WeatherInteractor
@@ -33,7 +45,8 @@ class CityWeatherScreenViewModel
         )
 
         compositeDisposable.add(
-            subscriber.subscribe(weatherInteractor.getCityWeather(536203))
+            subscriber.subscribe(weatherInteractor.getCityWeather(536203)
+            )
         )
     }
 

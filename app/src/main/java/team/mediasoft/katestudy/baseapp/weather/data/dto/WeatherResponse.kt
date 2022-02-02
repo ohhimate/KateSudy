@@ -1,6 +1,6 @@
 package team.mediasoft.katestudy.baseapp.weather.data.dto
 
-data class DataResponse(
+data class WeatherResponse(
     val base: String,
     val clouds: Clouds,
     val cod: Int,

@@ -3,7 +3,7 @@ package team.mediasoft.katestudy.baseapp.weather.data.service
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
-import team.mediasoft.katestudy.baseapp.weather.data.dto.DataResponse
+import team.mediasoft.katestudy.baseapp.weather.data.dto.WeatherResponse
 
 const val BASE_URL = "https://api.openweathermap.org/"
 
@@ -14,5 +14,5 @@ interface MainService {
         @Query("id") id: Int,
         @Query("units") units: String,
         @Query("appid") appid: String
-    ): Single<DataResponse>
+    ): Single<WeatherResponse>
 }

@@ -9,10 +9,10 @@ class WeatherListInteractorImpl @Inject constructor(
     private val weatherInteractor: WeatherInteractor
 ) : WeatherListInteractor {
 
-    override fun getGeneralWeather(cityIds: List<Int>): List<Single<CityWeather>> {
-        val result = ArrayList<Single<CityWeather>>(cityIds.size)
+    override fun getGeneralWeather(cityIds: List<Int>): Map<Int,Single<CityWeather>> {
+        val result = mutableMapOf<Int,Single<CityWeather>>()
         for (i in cityIds) {
-            result.add(weatherInteractor.getCityWeather(i))
+            result[i] = weatherInteractor.getCityWeather(i)
         }
         return result
     }
