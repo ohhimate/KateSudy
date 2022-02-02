@@ -2,6 +2,7 @@ package team.mediasoft.katestudy.feature.splash.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import javax.inject.Inject
 import team.mediasoft.katestudy.baseapp.presentation.viewmodel.BaseViewModel
 import team.mediasoft.katestudy.feature.splash.data.repository.TimerRepository
@@ -13,11 +14,13 @@ class SplashScreenViewModel
     private val repository: TimerRepository
 ) : BaseViewModel() {
 
-    private val _timer = MutableLiveData<Int>()
-    val timer: LiveData<Int> = _timer
+    private val timerMutableLiveData = MutableLiveData<Int>()
+    val timerLiveData: LiveData<Int> = timerMutableLiveData
 
     private val _isCompleted = MutableLiveData<Boolean>()
     val isCompleted: LiveData<Boolean> = _isCompleted
+
+    private val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     init {
         _isCompleted.value = false
@@ -27,17 +30,27 @@ class SplashScreenViewModel
         val subscriber = DefaultObservableSubscriber<Int>(
             onNext = {
                 debugLog("Next int: $it")
-                _timer.value = it
+                timerMutableLiveData.value = it
             },
             onComplete = {
                 debugLog("Splash timer completed")
                 _isCompleted.value = true
             }
         )
-        subscriber.subscribe(repository.getTimer())
+
+        compositeDisposable.add(
+            subscriber.subscribe(repository.getTimer())
+        )
     }
 
     override fun onBind() {
         subscribeToTimer()
     }
+
+    override fun onCleared() {
+        compositeDisposable.dispose()
+        super.onCleared()
+    }
 }
+
+

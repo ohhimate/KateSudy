@@ -37,4 +37,9 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d(TEST_TAG, this.javaClass.simpleName + ".onDestroy")
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TEST_TAG, this.javaClass.simpleName + ".onSaveInstanceState")
+    }
 }

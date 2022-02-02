@@ -27,5 +27,5 @@ interface SplashScreenModule {
     fun bindSplashScreenViewModel(viewModel: SplashScreenViewModel): ViewModel
 
     @Binds
-    fun bindTimerService(timerServiceImpl : TimerServiceImpl): TimerService
+    fun bindTimerService(timerServiceImpl: TimerServiceImpl): TimerService
 }
